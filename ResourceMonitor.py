@@ -3,10 +3,12 @@ import tkinter as tk
 from colorsys import hsv_to_rgb
 import platform
 
+PROGRAM_TITLE = "ResourceMonitor"
+
 class ResourceUsageApp:
     def __init__(self, master):
         self.master = master
-        self.master.title("System Resource Usage Visualization")
+        self.master.title(PROGRAM_TITLE)
         self.master.configure(background='black')
 
         self.frame = tk.Frame(master, background='black')
