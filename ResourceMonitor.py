@@ -12,26 +12,26 @@ class ResourceUsageApp:
         self.frame = tk.Frame(master, background='black')
         self.frame.pack()
 
-        # CPU Usage Visualization
+        # CPU.
         self.cpu_label = tk.Label(self.frame, text="CPU Usage", fg='white', bg='black')
         self.cpu_label.grid(row=0, column=0, sticky="w")
         self.cpu_canvas = tk.Canvas(self.frame, width=300, height=20, bd=1, relief='solid', bg='black')
         self.cpu_canvas.grid(row=0, column=1)
         self.cpu_usage_bar = self.cpu_canvas.create_rectangle(0, 0, 0, 20, fill='grey')
 
-        # RAM Usage Visualization
+        # RAM.
         self.ram_label = tk.Label(self.frame, text="RAM Usage", fg='white', bg='black')
         self.ram_label.grid(row=1, column=0, sticky="w")
         self.ram_canvas = tk.Canvas(self.frame, width=300, height=20, bd=1, relief='solid', bg='black')
         self.ram_canvas.grid(row=1, column=1)
         self.ram_usage_bar = self.ram_canvas.create_rectangle(0, 0, 0, 20, fill='grey')
 
-        # Disk Usage Visualization
+        # Disk.
         self.disks = self.get_usable_disks()
         self.disk_labels = []
         self.disk_canvases = []
         self.disk_usage_bars = []
-        self.init_disk_visualization(start_row=2)  # Start after CPU and RAM rows
+        self.init_disk_visualization(start_row=2)
 
         self.update_loop()
 
